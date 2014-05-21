@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.begear</groupId>
-	<artifactId>Utopia</artifactId>
+	<artifactId>BeLogin</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Utopia Maven Webapp</name>
+	<name>BeLogin Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<spring.version>LATEST</spring.version>
