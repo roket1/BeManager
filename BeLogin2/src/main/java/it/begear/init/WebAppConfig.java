@@ -1,5 +1,7 @@
 package it.begear.init;
 
+import it.begear.model.Utente;
+
 import java.util.Properties;
 
 import javax.annotation.Resource;
@@ -17,10 +19,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
-import org.springframework.web.servlet.view.tiles2.TilesConfigurer;
 
 @Configuration
-@ComponentScan("com.sprhib")
+@ComponentScan("it.begear")
 @EnableWebMvc
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
@@ -59,6 +60,7 @@ public class WebAppConfig {
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setDataSource(dataSource());
 		sessionFactoryBean.setPackagesToScan(env.getRequiredProperty(PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN));
+		sessionFactoryBean.setAnnotatedClasses(new Class[] {Utente.class});
 		sessionFactoryBean.setHibernateProperties(hibProperties());
 		return sessionFactoryBean;
 	}
@@ -86,13 +88,6 @@ public class WebAppConfig {
 		resolver.setViewClass(JstlView.class);
 		return resolver;
 	}
-	@Bean
 
-	public TilesConfigurer tilesConfigurer(){
-		TilesConfigurer tiles=new TilesConfigurer();
-		String [] def={"/WEB-INF/tiles.xml"};
-		tiles.setDefinitions(def);
-		return tiles;
-	}
 
 }

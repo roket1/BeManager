@@ -15,7 +15,7 @@ public class Utente {
 	
 	private String name;
 	
-	private Integer rating;
+	private String rating;
 	
 	public Integer getId() {
 		return id;
@@ -29,10 +29,10 @@ public class Utente {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getRating() {
+	public String getRating() {
 		return rating;
 	}
-	public void setRating(Integer rating) {
+	public void setRating(String rating) {
 		this.rating = rating;
 	}
 
