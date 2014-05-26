@@ -1,4 +1,4 @@
-package com.sprhib.init;
+package it.begear.init;
 
 import java.util.Properties;
 
@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+import org.springframework.web.servlet.view.tiles2.TilesConfigurer;
 
 @Configuration
 @ComponentScan("com.sprhib")
@@ -84,6 +85,14 @@ public class WebAppConfig {
 		resolver.setSuffix(".jsp");
 		resolver.setViewClass(JstlView.class);
 		return resolver;
+	}
+	@Bean
+
+	public TilesConfigurer tilesConfigurer(){
+		TilesConfigurer tiles=new TilesConfigurer();
+		String [] def={"/WEB-INF/tiles.xml"};
+		tiles.setDefinitions(def);
+		return tiles;
 	}
 
 }

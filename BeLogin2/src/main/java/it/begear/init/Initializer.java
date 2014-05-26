@@ -1,4 +1,4 @@
-package com.sprhib.init;
+package it.begear.init;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

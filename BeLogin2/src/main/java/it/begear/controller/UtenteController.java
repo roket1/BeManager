@@ -1,4 +1,7 @@
-package com.sprhib.controller;
+package it.begear.controller;
+
+import it.begear.model.Utente;
+import it.begear.service.UtenteService;
 
 import java.util.List;
 
@@ -9,9 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.sprhib.model.Utente;
-import com.sprhib.service.UtenteService;
 
 @Controller
 @RequestMapping(value = "/utente")

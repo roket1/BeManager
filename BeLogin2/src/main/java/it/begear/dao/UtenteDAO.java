@@ -1,10 +1,10 @@
-package com.sprhib.service;
+package it.begear.dao;
+
+import it.begear.model.Utente;
 
 import java.util.List;
 
-import com.sprhib.model.Utente;
-
-public interface UtenteService {
+public interface UtenteDAO {
 	
 	public void addTeam(Utente utente);
 	public void updateTeam(Utente utente);

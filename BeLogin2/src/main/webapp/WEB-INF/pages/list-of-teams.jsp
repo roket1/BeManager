@@ -23,6 +23,7 @@
 			</tr>
 		</thead>
 		<tbody>
+		
 			<c:forEach var="team" items="${utentes}">
 				<tr>
 					<td>${team.id}</td>

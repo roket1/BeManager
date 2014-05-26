@@ -1,13 +1,13 @@
-package com.sprhib.service;
+package it.begear.service;
+
+import it.begear.dao.UtenteDAO;
+import it.begear.model.Utente;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.sprhib.dao.UtenteDAO;
-import com.sprhib.model.Utente;
 
 @Service
 @Transactional
