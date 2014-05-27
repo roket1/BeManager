@@ -105,9 +105,6 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.8.0</version>
 		</dependency>
-		<!-- Maven rompeva il cazzo che voleva queste dipendenze , io lo soddisfo 
-			ma gli bestemmio i morti -->
-
 
 		<dependency>
 			<groupId>commons-digester</groupId>
@@ -121,9 +118,6 @@
 			<version>1.5.8</version>
 		</dependency>
 
-		<!-- Non sò per quale barbaro motivo i tutorial non mensionavano che log4j 
-			non voleva quei bastardi ... Dopo tante bestemmie sono arrivato alla soluzione 
-			.. In più credo che mi sia scoppiata una colonia di capillari nell'occhio -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>

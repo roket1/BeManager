@@ -18,4 +18,9 @@ public class LinkController {
 	public ModelAndView indexPage() {
 		return new ModelAndView("home");
 	}
+
+	@RequestMapping(value = "/login")
+	public ModelAndView loginPage() {
+		return new ModelAndView("login");
+	}
 }

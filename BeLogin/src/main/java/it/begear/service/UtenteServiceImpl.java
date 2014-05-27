@@ -12,28 +12,41 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class UtenteServiceImpl implements UtenteService {
-	
+
 	@Autowired
 	private UtenteDao utenteDAO;
 
-	public void addTeam(Utente utente) {
-		utenteDAO.addTeam(utente);		
+	public void addUser(Utente utente) {
+
+		utenteDAO.addUser(utente);
 	}
 
-	public void updateTeam(Utente utente) {
-		utenteDAO.updateTeam(utente);
+	public void updateUser(Utente utente) {
+		utenteDAO.updateUser(utente);
 	}
 
-	public Utente getTeam(int id) {
-		return utenteDAO.getTeam(id);
+	public Utente getUser(int id) {
+		return utenteDAO.getUser(id);
 	}
 
-	public void deleteTeam(int id) {
-		utenteDAO.deleteTeam(id);
+	public void deleteUser(int id) {
+		utenteDAO.deleteUser(id);
 	}
 
-	public List<Utente> getTeams() {
-		return utenteDAO.getTeams();
+	public List<Utente> getUsers() {
+		return utenteDAO.getUsers();
+	}
+
+	@Override
+	public List<Utente> findByExample(Utente utentedatrovare) {
+
+		return utenteDAO.findByExample(utentedatrovare);
+	}
+
+	@Override
+	public boolean isEmpty(List<Utente> list) {
+
+		return utenteDAO.isEmpty(list);
 	}
 
 }

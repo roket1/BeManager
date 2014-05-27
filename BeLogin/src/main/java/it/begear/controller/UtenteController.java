@@ -31,7 +31,7 @@ public class UtenteController {
 	public ModelAndView addingTeam(@ModelAttribute Utente utente) {
 
 		ModelAndView modelAndView = new ModelAndView("home");
-		utenteService.addTeam(utente);
+		utenteService.addUser(utente);
 
 		String message = "Utente aggiunto.";
 		modelAndView.addObject("message", message);
@@ -39,20 +39,40 @@ public class UtenteController {
 		return modelAndView;
 	}
 
+	/* Per Default il RequestMethod e' di tipo GET */
 	@RequestMapping(value = "/list")
 	public ModelAndView listOfTeams() {
 		ModelAndView modelAndView = new ModelAndView("lista-utenti");
 
-		List<Utente> utentes = utenteService.getTeams();
+		List<Utente> utentes = utenteService.getUsers();
 		modelAndView.addObject("utentes", utentes);
 
 		return modelAndView;
 	}
 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView viewlog() {
+		ModelAndView model = new ModelAndView("login");
+		model.addObject("utente", new Utente());
+		return model;
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView login(@ModelAttribute Utente utente) {
+		ModelAndView model = new ModelAndView("home");
+		if (!utenteService.findByExample(utente).isEmpty())
+			model.addObject("message", "LOGIN OK");
+		else
+			model.addObject("message", "LOGIN FAIL");
+
+		return model;
+
+	}
+
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public ModelAndView editTeamPage(@PathVariable Integer id) {
 		ModelAndView modelAndView = new ModelAndView("modifica-utenti");
-		Utente utente = utenteService.getTeam(id);
+		Utente utente = utenteService.getUser(id);
 		modelAndView.addObject("team", utente);
 		return modelAndView;
 	}
@@ -63,7 +83,7 @@ public class UtenteController {
 
 		ModelAndView modelAndView = new ModelAndView("home");
 
-		utenteService.updateTeam(utente);
+		utenteService.updateUser(utente);
 
 		String message = "utente modificato.";
 		modelAndView.addObject("message", message);
@@ -74,7 +94,7 @@ public class UtenteController {
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public ModelAndView deleteTeam(@PathVariable Integer id) {
 		ModelAndView modelAndView = new ModelAndView("home");
-		utenteService.deleteTeam(id);
+		utenteService.deleteUser(id);
 		String message = "utente cancellato.";
 		modelAndView.addObject("message", message);
 		return modelAndView;

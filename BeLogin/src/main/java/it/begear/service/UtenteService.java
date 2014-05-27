@@ -6,14 +6,20 @@ import java.util.List;
 
 public interface UtenteService {
 
-	public void addTeam(Utente utente);
+	public void addUser(Utente utente);
 
-	public void updateTeam(Utente utente);
+	public void updateUser(Utente utente);
 
-	public Utente getTeam(int id);
+	public Utente getUser(int id);
 
-	public void deleteTeam(int id);
+	public void deleteUser(int id);
 
-	public List<Utente> getTeams();
+	public List<Utente> getUsers();
+
+	public List<Utente> findByExample(Utente utentedatrovare);
+
+	public boolean isEmpty(List<Utente> list);
+	
+	
 
 }
