@@ -14,10 +14,10 @@
 		</tr>
 		<tr>
 
-			<td width="350"><tiles:insertAttribute name="content" /></td>
+			<td width="350"><tiles:insertAttribute name="body" /></td>
 		</tr>
 		<tr>
-			<td height="30" colspan="2"><tiles:insertAttribute name="footer" />
+			<td height="30" colspan="10"><tiles:insertAttribute name="footer" />
 			</td>
 		</tr>
 	</table>

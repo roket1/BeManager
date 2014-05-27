@@ -12,7 +12,15 @@
 	<context:component-scan base-package="it.begear" />
 
 	<mvc:annotation-driven />
-
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/" />
@@ -28,5 +36,8 @@
 		</property>
 
 	</bean>
+
+
+
 
 </beans>

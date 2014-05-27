@@ -8,8 +8,30 @@
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
 
-		<put-attribute name="content" value="/WEB-INF/tiles/content.jsp" />
+		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
 	</definition>
+
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Contact Manager" />
+		<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
+	</definition>
+
+	<definition name="aggiungi-utenti" extends="base.definition">
+		<put-attribute name="title" value="Contact Manager" />
+		<put-attribute name="body" value="/WEB-INF/pages/aggiungi-utenti.jsp" />
+	</definition>
+
+	<definition name="modifica-utenti" extends="base.definition">
+		<put-attribute name="title" value="Contact Manager" />
+		<put-attribute name="body" value="/WEB-INF/pages/modifica-utenti.jsp" />
+	</definition>
+
+	<definition name="lista-utenti" extends="base.definition">
+		<put-attribute name="title" value="Contact Manager" />
+		<put-attribute name="body" value="/WEB-INF/pages/lista-utenti.jsp" />
+	</definition>
+
+
 
 </tiles-definitions>
