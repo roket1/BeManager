@@ -5,6 +5,8 @@ import it.begear.service.UtenteService;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -58,11 +60,14 @@ public class UtenteController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@ModelAttribute Utente utente) {
+	public ModelAndView login(@ModelAttribute Utente utente,
+			HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("home");
-		if (!utenteService.findByExample(utente).isEmpty())
+		if (!utenteService.findByExample(utente).isEmpty()) {
 			model.addObject("message", "LOGIN OK");
-		else
+			request.getSession().setAttribute("user", utente);
+
+		} else
 			model.addObject("message", "LOGIN FAIL");
 
 		return model;

@@ -12,6 +12,13 @@
 	<context:component-scan base-package="it.begear" />
 
 	<mvc:annotation-driven />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/filter/**" />
+			<bean class="it.begear.filters.filtroLogin" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass">
@@ -20,7 +27,7 @@
 			</value>
 		</property>
 	</bean>
-	
+
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/" />

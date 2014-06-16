@@ -8,6 +8,10 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+	<welcome-file-list>
+		<welcome-file>/index.html</welcome-file>
+	</welcome-file-list>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring/applicationContext.xml,
@@ -37,5 +41,6 @@
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.beg</url-pattern>
 	</servlet-mapping>
 </web-app>

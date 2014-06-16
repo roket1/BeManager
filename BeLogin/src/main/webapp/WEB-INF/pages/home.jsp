@@ -8,4 +8,5 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		Utente</a><br /> <a
 		href="${pageContext.request.contextPath}/utente/list.html">Utenti</a><br />
 	<a href="${pageContext.request.contextPath}/utente/login.html">Login</a><br />
+	<a href="${pageContext.request.contextPath}/filter/user.html">Utente</a><br />
 </p>
